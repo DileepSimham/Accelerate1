@@ -7,6 +7,8 @@ import img2 from "./bg.jpg"
 import me2 from "./me2.jpg"
 import React, { useEffect, useState } from 'react';
 import "../App.css"
+import { Link } from 'react-router-dom';
+
 
 function Home() {
     const [text] = useTypewriter({
@@ -79,6 +81,10 @@ function Home() {
                 {/* <div className={`${!sidebarVisible ? 'cursor-pointer' : 'd-none'} float-end`} onClick={toggleSidebar}>
                     <FontAwesomeIcon icon={faBars} className="me-2" />
                 </div> */}
+                 <div className="header-mobile d-none">
+                        <a class="header-toggle"><i class="fas fa-bars"></i></a>
+                        <h2>Philip Watson</h2>
+                    </div>
 
                 <div className="row">
                     {/* Sidebar */}
@@ -95,15 +101,15 @@ function Home() {
                             </div>
                             <ul className="nav flex-column list" mb-5>
                                 <li className="nav-item" onClick={() => highlight("home")}>
-                                    <a className="nav-link" id="home" href="#home" style={textColor}>
+                                    <Link to="/" className="nav-link" id="home" href="#home" style={textColor}>
                                         <FontAwesomeIcon icon={faHome} className='me-2' /> Home
-                                    </a>
+                                    </Link>
                                     <div className="line"></div>
                                 </li>
                                 <li className="nav-item" onClick={() => highlight("about")}>
-                                    <a className="nav-link" id="about" href="#about" style={textColor}>
+                                    <Link to="/aboutme" className="nav-link" id="about" href="#about" style={textColor}>
                                         <FontAwesomeIcon icon={faUser} className='me-2' /> About Me
-                                    </a>
+                                    </Link>
                                     <div className="line"></div>
                                 </li>
                                 <li className="nav-item" onClick={() => highlight("resume")}>

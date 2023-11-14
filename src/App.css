@@ -22,7 +22,7 @@
 } */
 
 @media screen and (max-width:805px) {
-  
+
   /* #check {
     display: none;
   }
@@ -67,72 +67,15 @@
 } */
 
 
-/*============ 5. About Section ============*/
-
-.about-section {
-  background-color: #2C2D2F;
+.card {
+  width: 200px;
+  height: 100px;
+  background-color: #e0e0e0;
+  margin: 0 10px;
+  /* Adjust the margin as needed */
 }
 
-.about-section .about h3 {
-  font-size: 22px;
-  font-weight: 700;
-}
-
-.about-section .about .signature {
-  width: 50%;
-}
-
-.about-section .about .about-info ul li {
-  line-height: 1em;
-  margin-bottom: 15px;
-}
-
-.about-section .about .about-info ul li span.title {
-  font-family: "Playfair Display", serif;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: .5px;
-  border-bottom: 2px solid #ffffff;
-  position: relative;
-  display: inline-block;
-  margin-right: 15px;
-  padding-bottom: 1px;
-  color: #ffffff;
-}
-
-.about-section .about .about-info ul li span.title:after {
-  content: ':';
-  position: absolute;
-  right: -10px;
-}
-
-.about-section .services .service-item {
-  text-align: center;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.about-section .services .service-item .icon {
-  font-size: 50px;
-  margin-bottom: 10px;
-  line-height: 1em;
-  color: #ffffff;
-}
-
-.about-section .services .service-item h4 {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.about-section .services .service-item p {
-  font-size: 14.5px;
-  line-height: 22px;
-  margin-bottom: 0;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.clients .client-logo img {
+.client-logo img {
   width: 100px;
   height: 100px;
   margin: auto;
@@ -148,31 +91,7 @@
   opacity: 1;
 }
 
-.testimonials .testimonial-item {
-  position: relative;
-  padding: 5px;
-}
-
-.testimonials .testimonial-item .testimonial-content {
-  background-color: #17181B;
-  width: 100%;
-  -webkit-border-radius: 50px 0 50px 0;
-  border-radius: 50px 0 50px 0;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 100px;
-  padding-right: 20px;
-  font-size: 14px;
-  position: relative;
-  -webkit-filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.2));
-  filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.2));
-}
-
-.testimonials .testimonial-item .testimonial-content p {
-  margin-bottom: 0;
-}
-
-.testimonials .testimonial-item .testimonial-content:before {
+#testimonial-content:before {
   content: "\f10d";
   position: absolute;
   left: 5%;
@@ -186,7 +105,7 @@
   color: #e1e1e1;
 }
 
-.testimonials .testimonial-item .testimonial-content:after {
+.testimonial-content:after {
   position: absolute;
   content: "";
   left: 15px;
@@ -201,25 +120,246 @@
   border-top: 11px solid #17181B;
 }
 
-.testimonials .testimonial-item .testimonial-meta {
-  margin-top: 20px;
-  margin-left: 15px;
+/* ----------------------------------------------------------- */
+.resume-section {
+  background-color: #2C2D2F;
 }
 
-.testimonials .testimonial-item .testimonial-meta img {
-  width: 60px;
-  height: 60px;
-  float: left;
-  -webkit-border-radius: 20px 0 20px 0;
-  border-radius: 20px 0 20px 0;
-  margin-right: 10px;
+.resume-section ul.education,
+.resume-section ul.experience {
+  margin: 20px 0 50px;
+  list-style: none;
+  position: relative;
+  padding: 0 0 0 50px;
+  width: 100%;
 }
 
-.testimonials .testimonial-item .testimonial-meta .meta-info h4 {
+.resume-section ul.education li,
+.resume-section ul.experience li {
+  position: relative;
+  margin-left: 10px;
+  padding: 20px;
+  -webkit-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.resume-section ul.education li:not(:first-child),
+.resume-section ul.experience li:not(:first-child) {
+  margin-top: 60px;
+}
+
+.resume-section ul.education li span.line-left,
+.resume-section ul.experience li span.line-left {
+  width: 2px;
+  height: 100%;
+  background-color: #e1e1e1;
+  left: -10px;
+  top: 0;
+  position: absolute;
+}
+
+.resume-section ul.education li span.line-left:before,
+.resume-section ul.education li span.line-left:after,
+.resume-section ul.experience li span.line-left:before,
+.resume-section ul.experience li span.line-left:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid #e1e1e1;
+  position: absolute;
+  left: -4px;
+  top: -10px;
+}
+
+.resume-section ul.education li span.line-left:after,
+.resume-section ul.experience li span.line-left:after {
+  top: 100%;
+}
+
+.resume-section .education .content,
+.resume-section .experience .content {
+  margin-left: 10px;
+}
+
+.resume-section .education .content h4,
+.resume-section .experience .content h4 {
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 700;
+  letter-spacing: .5px;
+  line-height: 26px;
+  margin: 0;
+  text-transform: uppercase;
 }
 
-.testimonials .testimonial-item .testimonial-meta .meta-info p {
-  font-size: 14px;
+.resume-section .education .content h5,
+.resume-section .experience .content h5 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.resume-section .education .content p.info,
+.resume-section .experience .content p.info {
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+.resume-section .education span.year,
+.resume-section .experience span.year {
+  height: 100%;
+  left: -10px;
+  top: 0;
+  position: absolute;
+}
+
+.resume-section .education span.year span,
+.resume-section .experience span.year span {
+  font-size: 16px;
+  position: absolute;
+  -webkit-transform: translateX(-120%);
+  -ms-transform: translateX(-120%);
+  transform: translateX(-120%);
+  color: #ffffff;
+}
+
+.resume-section .education span.year span.to,
+.resume-section .experience span.year span.to {
+  top: -18px;
+}
+
+.resume-section .education span.year span.from,
+.resume-section .experience span.year span.from {
+  bottom: -18px;
+}
+
+.resume-section .skills {
+  margin-bottom: 30px;
+}
+
+.resume-section .skills .skill-item {
+  padding: 0 20px;
+}
+
+/*============= 2. Helper  ==================*/
+
+/********** Heading **********/
+
+.page-heading {
+  margin-bottom: 50px;
+  margin-top: 50px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  padding-bottom: 10px;
+}
+
+.page-heading .icon {
+  float: right;
+  font-size: 38px;
+  line-height: 1em;
+  color: #ffffff;
+}
+
+.page-heading h2 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 1em;
+  text-transform: capitalize;
+  color: #ffffff;
+  position: relative;
+  display: inline-block;
+}
+
+.subheading {
+  position: relative;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.subheading h3 {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1em;
+  letter-spacing: .5px;
+  position: relative;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.subheading h3:before,
+.subheading h3:after {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+  bottom: 0;
+}
+
+.subheading h3:before {
+  left: 0;
+}
+
+.subheading h3:after {
+  right: 0;
+}
+
+
+/********** Progress Bar **********/
+
+.progress-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+}
+
+.progress {
+  height: 10px;
+  background-color: #404144;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin-bottom: 20px;
+  overflow: visible;
+}
+
+.progress .progress-bar {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  position: relative;
+  background-color: white;
+  width: 0;
+  -webkit-transition: all 2s ease-out;
+  -o-transition: all 2s ease-out;
+  transition: all 2s ease-out;
+  overflow: visible;
+}
+
+.progress .progress-bar:after {
+  content: "";
+  display: block;
+  border: 15px solid transparent;
+  border-bottom: 21px solid transparent;
+  position: absolute;
+  top: -26px;
+  right: -12px;
+  border-bottom-color: #ffffff;
+}
+
+.progress .progress-value {
+  font-size: 15px;
+  font-weight: bold;
+  color: #ffffff;
+  position: absolute;
+  top: -30px;
+  right: 0;
 }

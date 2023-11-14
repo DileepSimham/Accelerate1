@@ -8,6 +8,9 @@ import me2 from "./me2.jpg"
 import signature from "./signature-white.png"
 import React, { useEffect, useState } from 'react';
 import "../App.css"
+import OurClients from '../utilities/OurClients';
+import Testimonials from '../utilities/Testimonials';
+import { Link } from 'react-router-dom';
 
 
 function AboutMe() {
@@ -94,21 +97,21 @@ function AboutMe() {
                             </div>
                             <ul className="nav flex-column list" mb-5>
                                 <li className="nav-item" onClick={() => highlight("home")}>
-                                    <a className="nav-link" id="home" href="#home" style={textColor}>
+                                    <Link to="/" className="nav-link" id="home" style={textColor}>
                                         <FontAwesomeIcon icon={faHome} className='me-2' /> Home
-                                    </a>
+                                    </Link>
                                     <div className="line"></div>
                                 </li>
                                 <li className="nav-item" onClick={() => highlight("about")}>
-                                    <a className="nav-link" id="about" href="#about" style={textColor}>
+                                    <Link to='/aboutme' className="nav-link" id="about"  style={textColor}>
                                         <FontAwesomeIcon icon={faUser} className='me-2' /> About Me
-                                    </a>
+                                    </Link>
                                     <div className="line"></div>
                                 </li>
                                 <li className="nav-item" onClick={() => highlight("resume")}>
-                                    <a className="nav-link " id="resume" href="#resume" style={textColor}>
+                                    <Link to="/resume" className="nav-link " id="resume"  style={textColor}>
                                         <FontAwesomeIcon icon={faIdCard} className='me-2' /> Resume
-                                    </a>
+                                    </Link>
                                     <div className="line"></div>
                                 </li>
                                 <li className="nav-item" onClick={() => highlight("portfolio")}>
@@ -182,11 +185,11 @@ function AboutMe() {
                                             <li><span className='fw-bold fs-5 text-white border-bottom border-primary d-inline-block me-1 pb-1'>Phone</span><span class="value">: (+1) 123 456 7890</span></li>
                                             <li><span className='fw-bold fs-5 text-white border-bottom border-primary d-inline-block me-1 pb-1'>Freelance</span><span class="value">: Available</span></li>
                                         </ul>
-                                            <div className="p-1 pe-2 border rounded">
-                                                <a className="btn btn-main text-primary" href=" ">
-                                                    Download Resume
-                                                </a>
-                                            </div>
+                                        <div className="p-1 pe-2 border rounded">
+                                            <a className="btn btn-main text-primary" href=" ">
+                                                Download Resume
+                                            </a>
+                                        </div>
 
 
                                     </div>
@@ -196,7 +199,7 @@ function AboutMe() {
 
 
                             {/* <!--Services Row Start--> */}
-                            <div className="row services mb-30" style={{marginTop:"75px"}}>
+                            <div className="row services mb-30" style={{ marginTop: "75px" }}>
                                 <div className="col-md-12">
                                     <div className="subheading text-center m-3">
                                         <h3>Services</h3>
@@ -240,6 +243,16 @@ function AboutMe() {
                                 </div>
                             </div>
                             {/* <!--Services Row End--> */}
+
+                            <div>
+                                <OurClients />
+
+                            </div>
+
+                            <div>
+                                <Testimonials />
+                            </div>
+
                         </div>
 
                     </div>
