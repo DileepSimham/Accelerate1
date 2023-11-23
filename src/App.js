@@ -1,13 +1,13 @@
-import './App.css';
+// import './App.css';
 import Home from './components/Home';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
-import TypingAnimation from './components/TypingAnimation';
 import AboutMe from './components/AboutMe';
-import OurClients from './utilities/OurClients';
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
-import Resume from './utilities/Resume';
+import BlogExtended from './components/BlogExtended';
+import ResumePage from './components/ResumePage';
+// import PortfolioPage from './components/PortfolioPage';
+import BlogPage from './components/BlogPage';
+import ContactPage from './components/ContactPage';
 
 
 function App() {
@@ -17,7 +17,11 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/aboutme' element={<AboutMe />}></Route>
-          <Route path='/resume' element={<Resume />}></Route>
+          <Route path='/resume' element={<ResumePage />}></Route>
+          {/* <Route path='/portfolio' element={<PortfolioPage />}></Route> */}
+          <Route path='/blog' element={<BlogPage />}></Route>
+          <Route path='/blogExtended' element={<BlogExtended />}></Route>
+          <Route path='/contact' element={<ContactPage />}></Route>
           
         </Routes>
       </Router>
