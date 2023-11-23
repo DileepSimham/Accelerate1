@@ -5,66 +5,47 @@
   transform: scaleY(0.3);
 }
 
-/* .checkBtn {
+#myName {
   display: none;
 }
-
-#check {
-  display: none;
-}
-
-.checkBtn {
-  cursor: pointer;
-  font-size: 30px;
-  float: right;
-  color: #ed1e79;
-  line-height: 80px;
-} */
 
 @media screen and (max-width:805px) {
-
-  /* #check {
-    display: none;
-  }
-
-  .checkBtn {
-    display: block;
-  }
-
-  #check:checked #sidebar {
-    display: block;
-  } */
-
-  /* #sidebar {
-    display: none;
-  }
-
-  #main {
-    width: 100%;
-  } */
-  /* .right{
-    display: block;
-  } */
-
-}
-
-/* @media screen and (max-width: 805px) {
   #sidebar {
     display: none;
   }
 
   #main {
+    margin-left: 0px;
     width: 100%;
+
   }
 
   #check {
     display: none;
   }
 
-  .checkBtn {
-    display: block;
+  #myName {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
-} */
+
+  #bars {
+    margin-left: 40px;
+    font-size: 20px;
+  }
+
+}
+
+@media screen and (min-width:805px) {
+  #offCanvas{
+    display: none;
+  }
+ 
+  
+}
+
 
 
 .card {
@@ -363,3 +344,151 @@
   top: -30px;
   right: 0;
 }
+
+
+/* portfolio section  */
+.portfolio-section .portfolio-filter ul li {
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  color: #e1e1e1;
+  text-transform: uppercase;
+  padding: 30px 20px;
+  overflow: hidden;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.portfolio-section .portfolio-filter ul li.active {
+  background-color: #ffffff;
+  -webkit-border-radius: 27px;
+  border-radius: 20px;
+  color: #2C2D2F;
+}
+
+.portfolio-section {
+  overflow: hidden;
+}
+.portfolio-section .item figure:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0;
+  -webkit-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+.portfolio-section .item figure:hover:before {
+  background-color: rgb(65, 198, 243);
+  opacity: .7;
+}
+.portfolio-section .item figure:hover figcaption h4,
+.portfolio-section .item figure:hover figcaption p {
+    opacity: 1;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+.portfolio-section .item figure figcaption h4,
+.portfolio-section .item figure figcaption p {
+    opacity: 0;
+    color: #fff;
+    -webkit-transition: all .1s ease-in;
+    -o-transition: all .1s ease-in;
+    transition: all .1s ease-in;
+}
+.portfolio-section .item figure figcaption h4 {
+  font-size: 20px;
+  font-weight: 700;
+  /* -webkit-transform: translateY(-50px);
+  -ms-transform: translateY(-50px); */
+  transform: translateY(-50px);
+}
+.portfolio-section .item figure figcaption p {
+  padding-top: 10px;
+  -webkit-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  transform: translateY(50px);
+}
+
+.portfolio-section .item a figure:after {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  bottom: 20px;
+  right: 25px;
+  color: #fff;
+  font-size: 56px;
+  opacity: 0;
+  -webkit-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(50px);
+  -webkit-transition: all .1s ease-in;
+  -o-transition: all .1s ease-in;
+  transition: all .1s ease-in;
+}
+.portfolio-section .item a figure:hover:after {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+  -webkit-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+.portfolio-section .item a.image figure:after {
+  content: "\f03e";
+}
+
+.portfolio-section .item a.video figure:after {
+  content: "\f03d";
+}
+
+.portfolio-section .item a.audio figure:after {
+  content: "\f03d";
+}
+
+.portfolio-section .item a.ajax figure:after {
+  content: "\f15c";
+}
+
+/*============ 8. Blog Section ============*/
+.blog-section .blog-item .blog-image img {
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.blog-section .blog-item:hover img {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.blog-comments .comment-list .comment .comment-text span.date {
+  display: block;
+  color: #999;
+  font-size: 12px;
+  line-height: 1em;
+  margin-bottom: 5px;
+}
+.blog-comments .comment-list .comment .comment-text p {
+  color: #ffffff;
+  font-size: 15px;
+}
+
+
+
+/********** Form **********/
+
+
+

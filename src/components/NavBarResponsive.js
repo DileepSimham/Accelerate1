@@ -1,23 +1,20 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faHome, faUser, faIdCard, faBriefcase, faBook, faEnvelope, faLaptop, faEye, faPhone, faCamera } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUser, faIdCard, faBriefcase, faBook, faEnvelope, faBars, faL } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookSquare, faTwitter, faYoutube, faDribbble, faBehance } from '@fortawesome/free-brands-svg-icons';
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
-import img1 from "../components/me.jpg"
-import img2 from "../components/bg.jpg"
-import me2 from "../components/me2.jpg"
-import signature from "../components/signature-white.png"
-import React, { useEffect, useState } from 'react';
+import img2 from "./bg.jpg"
+import me2 from "./me2.jpg"
+import React, { useState } from 'react';
 import "../App.css"
-import OurClients from '../utilities/OurClients';
-import Testimonials from '../utilities/Testimonials';
 import { Link } from 'react-router-dom';
 
-function NavBar() {
-
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
+function NavBarResponsive() {
+    const [text] = useTypewriter({
+        words: [' Graphics Designer', ' Freelancer', ' Web Developer', ' UI/UX Designer'],
+        loop: {},
+        typeSpeed: 20,
+        deleteSpeed: 20,
+    })
 
     const customTextColorStyle = {
         color: '##cfd8e8',
@@ -34,15 +31,11 @@ function NavBar() {
         marginLeft: '50px'
     })
 
-    const [textColor2, setTextColor2] = useState({
-
-        color: '#b6c2d6',
-        fontSize: '10px',
-        fontWeight: 'normal',
-        padding: '10px 0',
-        textTransform: 'uppercase',
-        letterSpacing: '1px',
-        marginLeft: '50px'
+    // main content styles
+    const [styleOne, setStyleOne] = useState({
+        fontWeight: 'bold',
+        fontSize: '4rem',
+        fontFamily: 'cursive'
     })
 
 
@@ -68,6 +61,43 @@ function NavBar() {
             setHighlightedElement(null);
         }
     };
+    const [toggle, setToggle] = useState(false)
+
+    const checked = () => {
+        const element1 = document.getElementById("sidebar");
+        const element2 = document.getElementById("main");
+        const myName = document.getElementById("name");
+
+
+        if (toggle) {
+            element1.style.display = 'none'
+            element2.style.width = '100%'
+            element2.style.height = '100%'
+            setTextColor({
+                ...textColor,
+                color: "#b6c2d6"
+            })
+            setStyleOne({ ...styleOne, fontSize: '4rem' })
+            myName.style.marginLeft = "200px"
+
+
+
+            setToggle(false);
+        } else {
+            element1.style.transition = 'width 2s'
+            element1.style.display = 'block'
+            element1.style.width = '40%';
+            element2.style.width = '60%';
+            setTextColor({ ...textColor, color: "#b6c2d6" })
+            const myName = document.getElementById("name");
+            setStyleOne({ ...styleOne, fontSize: '2rem' })
+            myName.style.marginLeft = "1px"
+
+
+            setToggle(true)
+        }
+
+    }
     return (
         <nav id="sidebar" className="col-2 vh-100 p-0 position-fixed" style={{ ...customTextColorStyle, maxWidth: '50%' }}>
             {/* Your content here */}
@@ -94,27 +124,27 @@ function NavBar() {
                         <div className="line"></div>
                     </li>
                     <li className="nav-item" onClick={() => highlight("resume")}>
-                        <Link to='/resume' className="nav-link " id="resume" style={textColor}>
+                        <a className="nav-link " id="resume" href="#resume" style={textColor}>
                             <FontAwesomeIcon icon={faIdCard} className='me-2' /> Resume
-                        </Link>
+                        </a>
                         <div className="line"></div>
                     </li>
                     <li className="nav-item" onClick={() => highlight("portfolio")}>
-                        <Link to='/portfolio' className="nav-link " id="portfolio" style={textColor}>
+                        <a className="nav-link " id="portfolio" href="#contact" style={textColor}>
                             <FontAwesomeIcon icon={faBriefcase} className='me-2' /> Portfolio
-                        </Link>
+                        </a>
                         <div className="line"></div>
                     </li>
                     <li className="nav-item" onClick={() => highlight("blog")}>
-                        <Link to='/blog' className="nav-link " id="blog" style={textColor}>
+                        <a className="nav-link " id="blog" href="#contact" style={textColor}>
                             <FontAwesomeIcon icon={faBook} className='me-2' /> Blog
-                        </Link>
+                        </a>
                         <div className="line"></div>
                     </li>
                     <li className="nav-item" onClick={() => highlight("contact")}>
-                        <Link to='/contact' className="nav-link " id="contact" style={textColor}>
+                        <a className="nav-link " id="contact" href="#contact" style={textColor}>
                             <FontAwesomeIcon icon={faEnvelope} className='me-2' /> Contact
-                        </Link>
+                        </a>
                         <div className="line"></div>
                     </li>
                 </ul>
@@ -135,4 +165,4 @@ function NavBar() {
     )
 }
 
-export default NavBar
+export default NavBarResponsive
